@@ -9,6 +9,7 @@ export const adventures = [
     type: 'Trail tek',
     difficulty: 'Srednje',
     excerpt: 'Hladen start, oranžen vzhod in tekoč spust nazaj v dolino.',
+    image: '/images/verbier01.jpg',
     featured: true,
   },
   {
@@ -21,7 +22,8 @@ export const adventures = [
     type: 'Zimska tura',
     difficulty: 'Lahko',
     excerpt: 'Kratek pobeg nad meglo z mehkim snegom pod nogami.',
-    featured: true,
+    image: '/images/pordoi01.jpg',
+    featured: false,
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ export const adventures = [
     type: 'Dolgi tek',
     difficulty: 'Težko',
     excerpt: 'Dolga, ritmična pot čez pašnike, melišča in razgledne grebene.',
-    featured: true,
+    image: '/images/pordoi01.jpg',
+    featured: false,
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ export const adventures = [
     type: 'Nočni tek',
     difficulty: 'Srednje',
     excerpt: 'Čelka, tišina gozda in občutek, da je hrib samo tvoj.',
-    featured: true,
+    image: '/images/pordoi01.jpg',
+    featured: false,
   },
   {
     id: 5,
@@ -57,7 +61,8 @@ export const adventures = [
     type: 'Ultra trening',
     difficulty: 'Težko',
     excerpt: 'Preverjanje nog, glave in opreme pred dolgimi poletnimi cilji.',
-    featured: true,
+    image: '/images/pordoi01.jpg',
+    featured: false,
   },
   {
     id: 6,
@@ -69,6 +74,7 @@ export const adventures = [
     type: 'Trail tek',
     difficulty: 'Težko',
     excerpt: 'Blato, veter in eden tistih dni, ko narava narekuje tempo.',
+    image: '/images/pordoi01.jpg',
     featured: true,
   },
   {
@@ -81,6 +87,7 @@ export const adventures = [
     type: 'Pustolovščina',
     difficulty: 'Srednje',
     excerpt: 'Pozen prihod, kratek spanec in jutro, ki vse povrne.',
+    image: '/images/rgac02.jpg',
     featured: true,
   },
   {
@@ -93,7 +100,8 @@ export const adventures = [
     type: 'Vertical',
     difficulty: 'Srednje',
     excerpt: 'Kratek, strm in učinkovit trening za moč v nogah.',
-    featured: true,
+    image: '/images/verbier01.jpg',
+    featured: false,
   },
   {
     id: 9,
@@ -105,6 +113,7 @@ export const adventures = [
     type: 'Gorski tek',
     difficulty: 'Težko',
     excerpt: 'Dolg dan med skalami, razgledi in neskončnimi gorskimi kilometri.',
+    image: '/images/vajolet01.jpg',
     featured: true,
   },
 ]

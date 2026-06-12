@@ -1,6 +1,9 @@
 <template>
   <footer class="site-footer">
-    <p>© {{ new Date().getFullYear() }} Gorski kilometri — dnevnik trail teka, gora in pustolovščin.</p>
+    <p>© {{ new Date().getFullYear() }} Gorski kilometri — dnevnik trail teka, in gorskih avantur.</p>
+    <a href="https://nejc-ursic.netlify.app" target="_blank" rel="noopener" class="external-link">
+        Nejc Uršič
+    </a>
   </footer>
 </template>
 
@@ -11,6 +14,8 @@
   padding: var(--space-xl) 0;
   color: var(--color-muted);
   border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
 }
 
 p {

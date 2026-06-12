@@ -2,12 +2,12 @@
   <section class="section-block">
     <div class="section-heading">
       <p class="eyebrow">Izbrane poti</p>
-      <h2>Glavnih 9 pustolovščin</h2>
+      <h2>Najbolj zanimive</h2>
     </div>
 
     <div class="adventure-grid">
       <AdventureCard
-        v-for="adventure in adventures"
+        v-for="adventure in featuredAdventures"
         :key="adventure.id"
         :adventure="adventure"
       />
@@ -16,11 +16,16 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import AdventureCard from './AdventureCard.vue'
 
-defineProps({
+const props = defineProps({
   adventures: { type: Array, required: true },
 })
+
+const featuredAdventures = computed(() =>
+  props.adventures.filter((adventure) => adventure.featured)
+)
 </script>
 
 <style scoped>

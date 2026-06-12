@@ -39,7 +39,6 @@ main {
 
 .button {
   display: inline-flex;
-  margin-top: var(--space-md);
   padding: 0.95rem 1.25rem;
   border-radius: 999px;
   background: var(--color-accent);
