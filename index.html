@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="sl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gorski kilometri</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem('gorski-kilometri-theme')
+        document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light'
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
