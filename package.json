@@ -24,10 +24,13 @@
     "eslint-plugin-oxlint": "~1.60.0",
     "eslint-plugin-vue": "~10.8.0",
     "globals": "^17.5.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.2.0",
     "npm-run-all2": "^8.0.4",
     "oxlint": "~1.60.0",
     "prettier": "3.8.3",
     "vite": "^8.0.8",
+    "vite-plugin-markdown": "^2.2.0",
     "vite-plugin-vue-devtools": "^8.1.1"
   },
   "engines": {

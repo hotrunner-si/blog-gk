@@ -7,7 +7,7 @@
     @click="toggleTheme"
   >
     <span class="theme-toggle_icon" aria-hidden="true">{{ isDark ? '☀' : '☾' }}</span>
-    <span>{{ isDark ? 'Light' : 'Dark' }}</span>
+    
   </button>
 </template>
 

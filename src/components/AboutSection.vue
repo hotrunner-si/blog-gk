@@ -1,6 +1,6 @@
 <template>
   <section class="about-section section-block">
-    <p class="eyebrow">O projektu</p>
+    <p class="eyebrow">Projekt</p>
     <h2>Dnevnik poti, ki se začnejo tam, kjer se cesta konča.</h2>
     <p>
       Gorski kilometri so prostor za trail teke, alpske ture, razmisleke s poti, opremo,

@@ -1,29 +1,30 @@
 <template>
-  <article class="adventure-card">
-    <div class="card-topline">
-      <span>{{ adventure.type }}</span>
-      <span>{{ formattedDate }}</span>
-    </div>
+  <RouterLink :to="`/blog/${adventure.slug}`" class="adventure-card">
+    
+      <div class="card-topline">
+        <span>{{ adventure.type }}</span>
+        <span>{{ formattedDate }}</span>
+      </div>
 
-    <div class="card-image-wrap">
-      <img :src="adventure.image" :alt="adventure.title" class="card-image" />
+      <div class="card-image-wrap">
+        <img :src="adventure.image" :alt="adventure.title" class="card-image" />
 
-      <div class="image-overlay">
-        <p class="location">{{ adventure.location }}</p>
+        <div class="image-overlay">
+          <p class="location">{{ adventure.location }}</p>
 
-        <div class="stats-row">
-          <span>{{ adventure.distance }} km</span>
-          <span>{{ adventure.elevation }} m+</span>
-          <span>{{ adventure.difficulty }}</span>
+          <div class="stats-row">
+            <span>{{ adventure.distance }} km</span>
+            <span>{{ adventure.elevation }} m+</span>
+            <span>{{ adventure.difficulty }}</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="card-content">
-      <h3>{{ adventure.title }}</h3>
-      <p>{{ adventure.excerpt }}</p>
-    </div>
-  </article>
+      <div class="card-content">
+        <h3>{{ adventure.title }}</h3>
+        <p>{{ adventure.excerpt }}</p>
+      </div>
+  </RouterLink>
 </template>
 
 <script setup>
@@ -53,6 +54,8 @@ const formattedDate = computed(() =>
   background: var(--color-card-bg);
   padding: var(--space-md);
   overflow: hidden;
+  color: inherit;
+  text-decoration: none;
 }
 
 .card-topline {

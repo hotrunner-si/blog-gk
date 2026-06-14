@@ -8,7 +8,7 @@
       </p>
 
       <div class="hero-actions">
-        <RouterLink to="/blog" class="button">Preberi pustolovščine</RouterLink>
+        <RouterLink to="/blog" class="button">Preberi blog</RouterLink>
 
         <div class="hero-card" aria-label="Povzetek strani">
           <span>{{ adventureCount }}</span>

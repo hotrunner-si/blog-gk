@@ -2,7 +2,7 @@
   <section class="section-block">
     <div class="section-heading">
       <p class="eyebrow">Izbrane poti</p>
-      <h2>Najbolj zanimive</h2>
+      <h2>Izpostavljeno</h2>
     </div>
 
     <div class="adventure-grid">

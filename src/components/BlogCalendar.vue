@@ -1,93 +1,349 @@
 <template>
-  <div class="calendar-view">
-    <article
-      v-for="adventure in sortedAdventures"
-      :key="adventure.id"
-      class="calendar-item"
-    >
-      <div class="calendar-date">
-        <strong>{{ day(adventure.date) }}</strong>
-        <span>{{ month(adventure.date) }}</span>
+  <div class="calendar-wrap">
+    <section v-if="activeMonth" class="calendar-month">
+      <div class="calendar-header">
+        <button :disabled="currentMonthIndex === 0" @click="previousMonth">
+          ←
+        </button>
+
+        <h2>{{ activeMonth.label }}</h2>
+
+        <button
+          :disabled="currentMonthIndex === months.length - 1"
+          @click="nextMonth"
+        >
+          →
+        </button>
       </div>
 
-      <div>
-        <p class="eyebrow">{{ adventure.type }} · {{ adventure.location }}</p>
-        <h3>{{ adventure.title }}</h3>
-        <p>{{ adventure.distance }} km · {{ adventure.elevation }} m+ · {{ adventure.difficulty }}</p>
+      <div class="weekdays">
+        <span v-for="day in weekDays" :key="day">{{ day }}</span>
       </div>
-    </article>
+
+      <div class="calendar-grid">
+        <div
+          v-for="blank in activeMonth.startOffset"
+          :key="`blank-${activeMonth.key}-${blank}`"
+          class="calendar-day empty"
+        />
+
+        <div
+          v-for="day in activeMonth.days"
+          :key="day.dateKey"
+          class="calendar-day"
+        >
+          <span class="day-number">{{ day.dayNumber }}</span>
+
+          <div v-if="day.adventures.length" class="dots">
+            <div
+              v-for="adventure in day.adventures"
+              :key="adventure.id"
+              class="dot-wrap"
+            >
+              <RouterLink
+                :to="`/blog/${adventure.slug}`"
+                class="activity-dot"
+                :style="dotStyle(adventure)"
+                :aria-label="adventure.title"
+              />
+
+              <div class="hover-card">
+                <AdventureCard :adventure="adventure" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import AdventureCard from './AdventureCard.vue'
 
 const props = defineProps({
   adventures: { type: Array, required: true },
 })
 
-const sortedAdventures = computed(() =>
-  [...props.adventures].sort((a, b) => new Date(a.date) - new Date(b.date))
-)
+const currentMonthIndex = ref(0)
 
-const day = (date) => new Date(date).getDate()
+const weekDays = ['Pon', 'Tor', 'Sre', 'Čet', 'Pet', 'Sob', 'Ned']
 
-const month = (date) =>
-  new Intl.DateTimeFormat('sl-SI', { month: 'short' }).format(new Date(date))
+const dateKey = (date) => {
+  const d = new Date(date)
+
+  const year = d.getFullYear()
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+
+  return `${year}-${month}-${day}`
+}
+
+const adventuresByDate = computed(() => {
+  return props.adventures.reduce((acc, adventure) => {
+    const key = dateKey(adventure.date)
+
+    if (!acc[key]) acc[key] = []
+    acc[key].push(adventure)
+
+    return acc
+  }, {})
+})
+
+const months = computed(() => {
+  const uniqueMonths = [
+    ...new Set(
+      props.adventures.map((adventure) => {
+        const date = new Date(adventure.date)
+        return `${date.getFullYear()}-${date.getMonth()}`
+      })
+    ),
+  ]
+
+  return uniqueMonths
+    .map((monthKey) => {
+      const [year, month] = monthKey.split('-').map(Number)
+
+      const firstDay = new Date(year, month, 1)
+      const lastDay = new Date(year, month + 1, 0)
+
+      const startOffset = (firstDay.getDay() + 6) % 7
+
+      const days = Array.from({ length: lastDay.getDate() }, (_, index) => {
+        const date = new Date(year, month, index + 1)
+        const key = dateKey(date)
+
+        return {
+          dateKey: key,
+          dayNumber: index + 1,
+          adventures: adventuresByDate.value[key] || [],
+        }
+      })
+
+      return {
+        key: monthKey,
+        label: new Intl.DateTimeFormat('sl-SI', {
+          month: 'long',
+          year: 'numeric',
+        }).format(firstDay),
+        startOffset,
+        days,
+      }
+    })
+    .sort((a, b) => {
+      const [aYear, aMonth] = a.key.split('-').map(Number)
+      const [bYear, bMonth] = b.key.split('-').map(Number)
+
+      return new Date(aYear, aMonth) - new Date(bYear, bMonth)
+    })
+})
+
+const activeMonth = computed(() => months.value[currentMonthIndex.value])
+
+const previousMonth = () => {
+  if (currentMonthIndex.value > 0) {
+    currentMonthIndex.value--
+  }
+}
+
+const nextMonth = () => {
+  if (currentMonthIndex.value < months.value.length - 1) {
+    currentMonthIndex.value++
+  }
+}
+
+const dotStyle = (adventure) => {
+  const effort = adventure.distance + adventure.elevation / 100
+  const size = Math.min(Math.max(effort * 0.55, 10), 34)
+
+  return {
+    width: `${size}px`,
+    height: `${size}px`,
+  }
+}
 </script>
 
 <style scoped>
-.calendar-view {
+.calendar-wrap {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-2xl);
 }
 
-.calendar-item {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: var(--space-lg);
-  align-items: start;
+.calendar-month {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--color-card-bg);
   padding: var(--space-lg);
 }
 
-.calendar-date {
-  aspect-ratio: 1;
-  border-radius: var(--radius-sm);
-  background: var(--color-accent-soft);
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
-
-.calendar-date strong {
-  display: block;
-  font-size: 2rem;
+.calendar-month h2 {
+  margin: 0 0 var(--space-lg);
   font-family: var(--font-display);
-  color: var(--color-accent);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: capitalize;
 }
 
-.calendar-date span {
-  display: block;
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.weekdays span {
   color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
 }
 
-h3 {
-  margin: 0.25rem 0;
-  font-size: 1.35rem;
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-xs);
 }
 
-p {
+.calendar-day {
+  position: relative;
+  min-height: 96px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  padding: var(--space-sm);
+}
+
+.calendar-day.empty {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.day-number {
   color: var(--color-muted);
-  line-height: 1.6;
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
-@media (max-width: 640px) {
-  .calendar-item {
-    grid-template-columns: 1fr;
+.dots {
+  position: absolute;
+  inset: var(--space-sm);
+  top: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.dot-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.activity-dot {
+  display: block;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 6px var(--color-accent-soft);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.dot-wrap:hover .activity-dot {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 9px var(--color-accent-soft);
+}
+
+.hover-card {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 1rem);
+  z-index: 20;
+  width: min(330px, 80vw);
+  transform: translateX(-50%) translateY(0.5rem);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.dot-wrap:hover .hover-card {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 760px) {
+  .calendar-month {
+    padding: var(--space-md);
   }
+
+  .calendar-day {
+    min-height: 72px;
+    padding: 0.45rem;
+  }
+
+  .day-number {
+    font-size: 0.72rem;
+  }
+
+  .dots {
+    inset: 0.45rem;
+    top: 1.8rem;
+  }
+
+  .hover-card {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .calendar-grid,
+  .weekdays {
+    gap: 0.25rem;
+  }
+
+  .calendar-day {
+    min-height: 54px;
+    border-radius: 0.5rem;
+  }
+
+  .weekdays span {
+    font-size: 0.6rem;
+  }
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.calendar-header button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.calendar-header button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 </style>

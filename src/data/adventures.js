@@ -1,6 +1,7 @@
 export const adventures = [
   {
     id: 1,
+    slug: 'greben',
     title: 'Jutranji greben nad dolino',
     location: 'Kamniško-Savinjske Alpe',
     date: '2026-01-14',
@@ -11,7 +12,23 @@ export const adventures = [
     excerpt: 'Hladen start, oranžen vzhod in tekoč spust nazaj v dolino.',
     image: '/images/verbier01.jpg',
     featured: true,
+
+    gallery: [
+      '/images/verbier01.jpg',
+      '/images/pordoi01.jpg',
+      '/images/rgac02.jpg',
+    ],
+
+    content: [
+      'Dan se je začel še v temi, z mrzlim zrakom in tihim vzponom skozi gozd.',
+      'Na grebenu se je odprl razgled proti dolini, sončni vzhod pa je celotno turo naredil skoraj filmsko.',
+      'Spust je bil tekoč, tehničen ravno prav in idealen zaključek jutranje avanture.',
+    ],
+
+    stravaUrl: 'https://www.strava.com/activities/XXXXX',
+    gpxUrl: '/gpx/jutranji-greben.gpx',
   },
+
   {
     id: 2,
     title: 'Snežna linija do koče',
