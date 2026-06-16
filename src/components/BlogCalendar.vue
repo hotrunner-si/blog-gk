@@ -31,6 +31,7 @@
           v-for="day in activeMonth.days"
           :key="day.dateKey"
           class="calendar-day"
+          :class="{ today: day.dateKey === todayKey }"
         >
           <span class="day-number">{{ day.dayNumber }}</span>
 
@@ -59,7 +60,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import AdventureCard from './AdventureCard.vue'
 
 const props = defineProps({
@@ -79,6 +80,8 @@ const dateKey = (date) => {
 
   return `${year}-${month}-${day}`
 }
+
+const todayKey = dateKey(new Date())
 
 const adventuresByDate = computed(() => {
   return props.adventures.reduce((acc, adventure) => {
@@ -140,6 +143,23 @@ const months = computed(() => {
 })
 
 const activeMonth = computed(() => months.value[currentMonthIndex.value])
+
+watchEffect(() => {
+  if (!months.value.length) return
+
+  const latestAdventure = [...props.adventures].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  )[0]
+
+  const latestDate = new Date(latestAdventure.date)
+  const latestMonthKey = `${latestDate.getFullYear()}-${latestDate.getMonth()}`
+
+  const index = months.value.findIndex((month) => month.key === latestMonthKey)
+
+  if (index !== -1) {
+    currentMonthIndex.value = index
+  }
+})
 
 const previousMonth = () => {
   if (currentMonthIndex.value > 0) {
@@ -345,5 +365,14 @@ const dotStyle = (adventure) => {
 .calendar-header button:disabled {
   opacity: 0.35;
   cursor: not-allowed;
+}
+
+.calendar-day.today {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.calendar-day.today .day-number {
+  color: var(--color-accent);
 }
 </style>

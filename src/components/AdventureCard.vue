@@ -15,7 +15,7 @@
           <div class="stats-row">
             <span>{{ adventure.distance }} km</span>
             <span>{{ adventure.elevation }} m+</span>
-            <span>{{ adventure.difficulty }}</span>
+            <PlaygroundIcons :playground="adventure.playground" />
           </div>
         </div>
       </div>
@@ -29,6 +29,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import PlaygroundIcons from './PlaygroundIcons.vue'
 
 const props = defineProps({
   adventure: { type: Object, required: true },

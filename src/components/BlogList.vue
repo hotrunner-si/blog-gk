@@ -1,4 +1,19 @@
 <template>
+  <div class="blog-sort">
+    <label>
+      Sortiraj po:
+      <select v-model="sortBy">
+        <option value="date">Datumu</option>
+        <option value="title">Naslovu</option>
+        <option value="distance">Razdalji</option>
+        <option value="elevation">Višincih</option>
+      </select>
+    </label>
+
+    <button type="button" @click="toggleSortDirection">
+      {{ sortDirection === 'asc' ? 'Naraščajoče' : 'Padajoče' }}
+    </button>
+  </div>
   <div class="blog-timeline">
     <article v-for="adventure in sortedAdventures" :key="adventure.id" class="timeline-item">
       <div class="calendar-date">
@@ -16,7 +31,7 @@
       <div class="list-stats">
         <span>{{ adventure.distance }} km</span>
         <span>{{ adventure.elevation }} m+</span>
-        <span>{{ adventure.difficulty }}</span>
+        <PlaygroundIcons :playground="adventure.playground" />
 
       </div>
     </article>
@@ -24,26 +39,70 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import PlaygroundIcons from './PlaygroundIcons.vue'
 
 const props = defineProps({
   adventures: { type: Array, required: true },
 })
 
-const sortedAdventures = computed(() =>
-  [...props.adventures].sort((a, b) => new Date(a.date) - new Date(b.date))
-)
+const sortBy = ref('date')
+const sortDirection = ref('desc')
+
+const sortedAdventures = computed(() => {
+  return [...props.adventures].sort((a, b) => {
+    let result = 0
+
+    if (sortBy.value === 'date') {
+      result = new Date(a.date) - new Date(b.date)
+    }
+
+    if (sortBy.value === 'title') {
+      result = a.title.localeCompare(b.title, 'sl-SI')
+    }
+
+    if (sortBy.value === 'distance') {
+      result = a.distance - b.distance
+    }
+
+    if (sortBy.value === 'elevation') {
+      result = a.elevation - b.elevation
+    }
+
+    return sortDirection.value === 'asc' ? result : -result
+  })
+})
+
+const toggleSortDirection = () => {
+  sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+}
 
 const day = (date) => new Date(date).getDate()
 
 const month = (date) =>
   new Intl.DateTimeFormat('sl-SI', { month: 'short' }).format(new Date(date))
-
-const formatDate = (date) =>
-  new Intl.DateTimeFormat('sl-SI').format(new Date(date))
 </script>
 
 <style scoped>
+.blog-sort {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.blog-sort select,
+.blog-sort button {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  padding: 0.55rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}
+
 .blog-timeline {
   display: grid;
   gap: var(--space-md);

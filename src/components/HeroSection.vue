@@ -28,9 +28,9 @@
 </template>
 
 <script setup>
-import { adventures } from '../data/adventures'
+import { publicAdventures } from '../data/adventures'
 
-const adventureCount = adventures.length
+const adventureCount = publicAdventures.length
 </script>
 
 <style scoped>

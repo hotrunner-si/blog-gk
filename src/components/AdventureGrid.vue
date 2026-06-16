@@ -18,14 +18,8 @@
 <script setup>
 import { computed } from 'vue'
 import AdventureCard from './AdventureCard.vue'
+import { featuredAdventures } from '@/data/adventures.js'
 
-const props = defineProps({
-  adventures: { type: Array, required: true },
-})
-
-const featuredAdventures = computed(() =>
-  props.adventures.filter((adventure) => adventure.featured)
-)
 </script>
 
 <style scoped>
