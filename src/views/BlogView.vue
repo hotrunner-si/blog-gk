@@ -4,20 +4,22 @@
       <p class="eyebrow">Blog</p>
       <h1>Avanture</h1>
       <p>Preberi zanimivosti s tekem, treningov in drugih gorskih aktivnosti.</p>
-      <ViewSwitcher v-model="activeView" />
+      <ViewSwitcher v-model="activeView" class="view-switcher-desktop" />
     </div>
 
     <div class="blog-stats">
       <div class="blog-stat-card">
-        <span>{{ adventureStats.totalDistance }}</span>
+        <span>{{ formatNumber(adventureStats.totalDistance) }}</span>
         <p>blogiranih kilometrov</p>
       </div>
 
       <div class="blog-stat-card">
-        <span>{{ adventureStats.totalElevation }}</span>
+        <span>{{ formatNumber(adventureStats.totalElevation) }}</span>
         <p>višincev</p>
       </div>
     </div>
+
+    <ViewSwitcher v-model="activeView" class="view-switcher-mobile" />
   </section>
 
   <section class="section-block">
@@ -126,7 +128,23 @@ const formatNumber = (number) =>
   }
 }
 
+.view-switcher-mobile {
+  display: none;
+}
+
+
 @media (max-width: 700px) {
+  .view-switcher-desktop {
+    display: none;
+  }
+
+  .view-switcher-mobile {
+    display: flex;
+  }
+  .view-switcher-mobile :deep(.view-switcher) {
+    margin-top: var(--space-sm);
+  }
+
   .page-header {
     display: block;
   }

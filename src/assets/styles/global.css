@@ -45,3 +45,7 @@ main {
   color: var(--color-button-text);
   font-weight: 700;
 }
+
+.button:hover {
+  background: var(--color-accent-hover);
+}

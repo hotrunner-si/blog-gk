@@ -16,7 +16,7 @@ export const adventures = [
       'forest',
     ],
     excerpt: 'Osebni rekord na solo maratonu od stadiona Mekinje do Kamniške Bistrice in nazaj.',
-    image: '/images/verbier01.jpg',
+    image: '/images/fedaia01.jpg',
     gallery: [],
     content: [
       'Leto 2026 sem začel z osebnim rekordom na solo maratonu od stadiona Mekinje do Kamniške Bistrice in nazaj. Razdaljo sem zaključil v času 3 ure in 11 minut.',
@@ -117,7 +117,7 @@ export const adventures = [
       'ferrata',
     ],
     excerpt: 'Potovanje po Švici z mojo tekmo v Verbierju in navijanjem na Eiger Ultra Trailu.',
-    image: '/images/verbier01.jpg',
+    image: '/images/nendaz02.jpg',
     gallery: [],
     content: [
       'Potovanje v Švico je združilo pohode, raziskovanje in dve veliki tekaški zgodbi. V Nendazu sem osvojil kronco na Stravi, naredili smo pohod na Nendazov zob in si vzeli tudi dan počitka.',
@@ -167,7 +167,7 @@ export const adventures = [
       'river',
     ],
     excerpt: 'Pelmo Ronda, Dolomiti Bike Day, Croda da Lago in ferata Giovanni Lipella.',
-    image: '/images/pordoi01.jpg',
+    image: '/images/giau01.jpg',
     gallery: [],
     content: [
       'Tokratni Dolomiti so bili predvsem kolesarski. Najprej Pelmo Ronda, naslednji dan Dolomiti Bike Day, nato krog okoli Croda da Lago.',
@@ -264,7 +264,7 @@ export const adventures = [
       'river',
     ],
     excerpt: 'Trail du Mont Agel, 30 km, 1500 višincev in osvojeno 4. mesto.',
-    image: '/images/verbier01.jpg',
+    image: '/images/monaco01.jpg',
     gallery: [],
     content: [
       'Monaco Run je bil tokrat v trail izvedbi. Na Trail du Mont Agel sem na 30 kilometrih in 1500 višincih osvojil 4. mesto.',
@@ -313,7 +313,7 @@ export const adventures = [
       'river',
     ],
     excerpt: 'Mini kolesarski vikend z vzponom do jeza v Maltatalu.',
-    image: '/images/pordoi01.jpg',
+    image: '/images/verbier04.jpg',
     gallery: [],
     content: [
       'Mini kolesarski vikend v Feld am See in Maltatalu. Glavni del je bil vzpon iz Gmünda do jeza v Maltatalu.',
@@ -658,7 +658,7 @@ export const adventures = [
       'river',
     ],
     excerpt: 'Moja prva trail tekma, 33 km, 1600 višincev in 4. mesto.',
-    image: '/images/verbier01.jpg',
+    image: '/images/golica01.jpg',
     gallery: [],
     content: [
       'Na JATR sem nastopil na svoji prvi trail tekmi. Na 33 kilometrov dolgi trasi s 1600 višinci sem osvojil 4. mesto.',
@@ -732,7 +732,7 @@ export const adventures = [
       'forest',
     ],
     excerpt: 'Opora Sebastjanu Zarniku na poti do novega FKT-ja.',
-    image: '/images/verbier01.jpg',
+    image: '/images/kv01.jpg',
     gallery: [
       '/images/verbier01.jpg',
       '/images/pordoi01.jpg',
