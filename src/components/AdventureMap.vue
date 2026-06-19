@@ -102,5 +102,6 @@ onBeforeUnmount(() => {
   height: 460px;
   border-radius: var(--radius-md);
   overflow: hidden;
+  z-index: 0;
 }
 </style>
