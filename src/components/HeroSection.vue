@@ -4,7 +4,7 @@
       <p class="eyebrow">Trail running · gore · pustolovščine</p>
       <h1>Gorski kilometri</h1>
       <p class="hero-text">
-        Zgodbe z grebenov, dolgih vzponov, blatnih spustov in tihih juter nad meglo.
+        Zgodbe z grebenov, dolgih vzponov, blatnih spustov in tihih dopoldnevov nad meglo.
       </p>
 
       <div class="hero-actions">
@@ -12,7 +12,7 @@
 
         <div class="hero-card" aria-label="Povzetek strani">
           <span>{{ adventureCount }}</span>
-          <p>zapisov</p>
+          <p>zapisa</p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <img src="../assets/giau01.jpg" alt="Gorska pokrajina" class="hero-image" />
       <div class="hero-card-2" aria-label="Povzetek strani">
         <span>{{ adventureCount }}</span>
-        <p>zapisov</p>
+        <p>zapisa</p>
       </div>
     </div>
   </section>

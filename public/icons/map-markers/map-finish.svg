@@ -1,0 +1,35 @@
+<svg width="40" height="48" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="pinClip">
+      <path d="M20 46C20 46 36 29.5 36 17.5C36 8.94 28.84 2 20 2C11.16 2 4 8.94 4 17.5C4 29.5 20 46 20 46Z" />
+    </clipPath>
+  </defs>
+
+  <path
+    d="M20 46C20 46 36 29.5 36 17.5C36 8.94 28.84 2 20 2C11.16 2 4 8.94 4 17.5C4 29.5 20 46 20 46Z"
+    fill="white"
+  />
+
+  <g clip-path="url(#pinClip)">
+    <rect x="4" y="2" width="8" height="44" fill="black" />
+    <rect x="12" y="2" width="8" height="44" fill="white" />
+    <rect x="20" y="2" width="8" height="44" fill="black" />
+    <rect x="28" y="2" width="8" height="44" fill="white" />
+
+    <rect x="4" y="10" width="8" height="8" fill="white" />
+    <rect x="12" y="10" width="8" height="8" fill="black" />
+    <rect x="20" y="10" width="8" height="8" fill="white" />
+    <rect x="28" y="10" width="8" height="8" fill="black" />
+
+    <rect x="4" y="26" width="8" height="8" fill="white" />
+    <rect x="12" y="26" width="8" height="8" fill="black" />
+    <rect x="20" y="26" width="8" height="8" fill="white" />
+    <rect x="28" y="26" width="8" height="8" fill="black" />
+  </g>
+
+  <path
+    d="M20 46C20 46 36 29.5 36 17.5C36 8.94 28.84 2 20 2C11.16 2 4 8.94 4 17.5C4 29.5 20 46 20 46Z"
+    stroke="black"
+    stroke-width="0.4"
+  />
+</svg>

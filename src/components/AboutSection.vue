@@ -4,7 +4,7 @@
     <h2>Dnevnik poti, ki se začnejo tam, kjer se cesta konča.</h2>
     <p>
       Gorski kilometri so prostor za trail teke, alpske ture, razmisleke s poti, opremo,
-      treninge in vse majhne trenutke, ki jih v gorah hitro pozabimo, če jih ne zapišemo.
+      treninge in vse majhne trenutke v gorah, ki se tukaj spremenijo v velike spomine.
     </p>
   </section>
 </template>

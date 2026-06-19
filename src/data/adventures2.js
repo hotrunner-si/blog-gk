@@ -11,10 +11,7 @@ export const adventures = [
     elevation: 350,
     type: 'Cestni tek',
     difficulty: 'Težko',
-    playground: [
-      'road',
-      'forest',
-    ],
+    playground: ['road', 'forest'],
     excerpt: 'Osebni rekord na solo maratonu od stadiona Mekinje do Kamniške Bistrice in nazaj.',
     image: '/images/fedaia01.jpg',
     gallery: [],
@@ -36,9 +33,7 @@ export const adventures = [
     elevation: 2400,
     type: 'Gorska tura',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Velik jesenski krog čez Skuto, Dolgi hrbet in Grintovec.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -60,9 +55,7 @@ export const adventures = [
     elevation: 2800,
     type: 'Potovanje',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Lago del Mis, Passo Giau, Cinque Torri, Auronzo in ferata Cascate di Fanes.',
     image: '/images/pordoi01.jpg',
     gallery: [],
@@ -85,9 +78,7 @@ export const adventures = [
     elevation: 2900,
     type: 'Kolesarjenje',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Kranjska Gora, Vršič, Mangartsko sedlo, Trbiž in nazaj.',
     image: '/images/vajolet01.jpg',
     gallery: [],
@@ -109,13 +100,7 @@ export const adventures = [
     elevation: 5200,
     type: 'Trail tek',
     difficulty: 'Zelo težko',
-    playground: [
-      'river',
-      'peaks',
-      'waterfall',
-      'forest',
-      'ferrata',
-    ],
+    playground: ['river', 'peaks', 'waterfall', 'forest', 'ferrata'],
     excerpt: 'Potovanje po Švici z mojo tekmo v Verbierju in navijanjem na Eiger Ultra Trailu.',
     image: '/images/nendaz02.jpg',
     gallery: [],
@@ -139,9 +124,7 @@ export const adventures = [
     elevation: 1000,
     type: 'Trail tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Ponovna zmaga na 25 km in v skupnem seštevku vertikal + 25 km.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -163,9 +146,7 @@ export const adventures = [
     elevation: 5200,
     type: 'Kolesarjenje',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Pelmo Ronda, Dolomiti Bike Day, Croda da Lago in ferata Giovanni Lipella.',
     image: '/images/giau01.jpg',
     gallery: [],
@@ -188,9 +169,7 @@ export const adventures = [
     elevation: 1200,
     type: 'Kolesarjenje',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Po progi kronometra, kjer je zmagal Primož Roglič.',
     image: '/images/vajolet01.jpg',
     gallery: [],
@@ -212,9 +191,7 @@ export const adventures = [
     elevation: 900,
     type: 'Potovanje',
     difficulty: 'Lahko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Pohodi, sprehodi, teki in prvo kopanje.',
     image: '/images/verbier01.jpg',
     gallery: [],
@@ -236,9 +213,7 @@ export const adventures = [
     elevation: 650,
     type: 'Pohod',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Avanturistični pohod med balvani V Koncu in prečkanjem reke po podrtem drevesu.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -260,9 +235,7 @@ export const adventures = [
     elevation: 1500,
     type: 'Trail tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Trail du Mont Agel, 30 km, 1500 višincev in osvojeno 4. mesto.',
     image: '/images/monaco01.jpg',
     gallery: [],
@@ -285,9 +258,7 @@ export const adventures = [
     elevation: 1900,
     type: 'Gorska tura',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Novo leto se je začelo z vzponom na Grintovec.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -309,9 +280,7 @@ export const adventures = [
     elevation: 1800,
     type: 'Kolesarjenje',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Mini kolesarski vikend z vzponom do jeza v Maltatalu.',
     image: '/images/verbier04.jpg',
     gallery: [],
@@ -333,9 +302,7 @@ export const adventures = [
     elevation: 3200,
     type: 'Potovanje',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Žabljak, Durmitor, Črno jezero, Prutaš, Bobotov kuk in Tivat.',
     image: '/images/vajolet01.jpg',
     gallery: [],
@@ -358,9 +325,7 @@ export const adventures = [
     elevation: 1000,
     type: 'Trail tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Zmaga na 25 km, drugo mesto na vertikalu in skupna zmaga.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -383,15 +348,11 @@ export const adventures = [
     elevation: 1600,
     type: 'Trail tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Tretji nastop na UTVV in 3. mesto na 30 km.',
     image: '/images/verbier01.jpg',
     gallery: [],
-    content: [
-      'Tretji nastop na UTVV je prinesel 3. mesto na 30 kilometrov in 1600 višincev.',
-    ],
+    content: ['Tretji nastop na UTVV je prinesel 3. mesto na 30 kilometrov in 1600 višincev.'],
     stravaUrl: '',
     gpxUrl: '',
   },
@@ -407,9 +368,7 @@ export const adventures = [
     elevation: 300,
     type: 'Tekma',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Tek po Angleški promenadi, raziskovanje Monaka in 3. mesto na Monaco Run.',
     image: '/images/verbier01.jpg',
     gallery: [],
@@ -432,9 +391,7 @@ export const adventures = [
     elevation: 2800,
     type: 'Gorska tura',
     difficulty: 'Zelo težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Čez bivak pod Skuto in Rinke do Mrzle gore, nazaj čez Okrešelj in Kamniško sedlo.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -457,10 +414,9 @@ export const adventures = [
     elevation: 5200,
     type: 'Potovanje',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
-    excerpt: 'Pozza di Fassa, Lago di Carezza, Catinaccio, Pordoi, Cinque Torri, Cortina in Lago di Sorapis.',
+    playground: ['river'],
+    excerpt:
+      'Pozza di Fassa, Lago di Carezza, Catinaccio, Pordoi, Cinque Torri, Cortina in Lago di Sorapis.',
     image: '/images/pordoi01.jpg',
     gallery: [],
     content: [
@@ -482,9 +438,7 @@ export const adventures = [
     elevation: 900,
     type: 'Potovanje',
     difficulty: 'Lahko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Grossglocknerstrasse, Grundlsee, Altaussee, Bad Aussee in Hallstatt.',
     image: '/images/vajolet01.jpg',
     gallery: [],
@@ -506,10 +460,9 @@ export const adventures = [
     elevation: 2400,
     type: 'Gorska tura',
     difficulty: 'Zelo težko',
-    playground: [
-      'river',
-    ],
-    excerpt: 'Val Fiscalina, Toblin, Monte Paterno, Tre Cime, Croda dei Toni in ferata degli Alpini.',
+    playground: ['river'],
+    excerpt:
+      'Val Fiscalina, Toblin, Monte Paterno, Tre Cime, Croda dei Toni in ferata degli Alpini.',
     image: '/images/pordoi01.jpg',
     gallery: [],
     content: [
@@ -532,9 +485,7 @@ export const adventures = [
     elevation: 800,
     type: 'Trail tek',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Prvi nastop na Soča Outdoor Festivalu in 2. mesto na 25 km.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -557,9 +508,7 @@ export const adventures = [
     elevation: 800,
     type: 'Gorski tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Odlično 7. mesto posamezno in 2. mesto ekipno.',
     image: '/images/verbier01.jpg',
     gallery: [],
@@ -582,9 +531,7 @@ export const adventures = [
     elevation: 2300,
     type: 'Gorski tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Polmaraton po vrhovih Dleskovške planote s štartom pri Žegnanem studencu.',
     image: '/images/rgac02.jpg',
     gallery: [],
@@ -606,9 +553,7 @@ export const adventures = [
     elevation: 300,
     type: 'Trail tek',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Moja prva zmaga na trail dogodku, UTVV 13 km.',
     image: '/images/verbier01.jpg',
     gallery: [],
@@ -630,15 +575,11 @@ export const adventures = [
     elevation: 1200,
     type: 'Gorska tura',
     difficulty: 'Srednje',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Jesenska tura do Češke koče in Ledin.',
     image: '/images/rgac02.jpg',
     gallery: [],
-    content: [
-      'Jesenska gorska tura do Češke koče in Ledin.',
-    ],
+    content: ['Jesenska gorska tura do Češke koče in Ledin.'],
     stravaUrl: '',
     gpxUrl: '',
   },
@@ -654,9 +595,7 @@ export const adventures = [
     elevation: 1600,
     type: 'Trail tek',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Moja prva trail tekma, 33 km, 1600 višincev in 4. mesto.',
     image: '/images/golica01.jpg',
     gallery: [],
@@ -678,9 +617,7 @@ export const adventures = [
     elevation: 2000,
     type: 'Kolesarjenje',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
+    playground: ['river'],
     excerpt: 'Kolesarski maraton Alpe s 130 kilometri in 2000 višinci.',
     image: '/images/vajolet01.jpg',
     gallery: [],
@@ -702,10 +639,9 @@ export const adventures = [
     elevation: 1300,
     type: 'Gorska tura',
     difficulty: 'Težko',
-    playground: [
-      'river',
-    ],
-    excerpt: 'Vzpon na Krofičko iz Logarske doline in zaključek vseh 2000-akov Kamniških Alp v letu 2020.',
+    playground: ['river'],
+    excerpt:
+      'Vzpon na Krofičko iz Logarske doline in zaključek vseh 2000-akov Kamniških Alp v letu 2020.',
     image: '/images/rgac02.jpg',
     gallery: [],
     content: [
@@ -726,18 +662,9 @@ export const adventures = [
     elevation: 3300,
     type: 'Trail tek',
     difficulty: 'Zelo težko',
-    playground: [
-      'peaks',
-      'pastures',
-      'forest',
-    ],
+    playground: ['peaks', 'pastures', 'forest'],
     excerpt: 'Opora Sebastjanu Zarniku na poti do novega FKT-ja.',
     image: '/images/kv01.jpg',
-    gallery: [
-      '/images/verbier01.jpg',
-      '/images/pordoi01.jpg',
-      '/images/rgac02.jpg',
-    ],
     content: [
       'Sebastjan je svoj podvig, ki ga je načrtoval že celo leto, začel ob zgodnji jutranji uri na parkirišču pri Calcitu. Ob 5.00 se je zagnal proti Veliki planini. Pot ga je nadalje vodila čez Konja do planine Korošica nato pa z vzponi in spusti na Ojstrico in Planjavo vse do Kamniškega Sedla, kamor je pritekel že ob 10.00.',
       'Moja pot pa se je začela ob 7.00 z vzponom na Sedlo z Jermance. Do kamniške koče sem prispel pravočasno, uro in pol pred predvidenim prihodom Sebastjana. Malo smo se ohladili in se skupaj z oskrbnikoma koče pripravili na prihod Sebastjana.',
@@ -745,26 +672,53 @@ export const adventures = [
       'Moja pot skozi cel dan je bila sledeča: Jermanca, Kamniško Sedlo, Brana, Turska Gora, Mala Rinka, Kranjska Rinka, Skuta, Štruca, Dolgi Hrbet, Grintovec, Kokrško Sedlo, Kalški Greben, Vrh Korena, Kriška planina, Kamniški vrh in na koncu spust do Calcita.',
       'Sebastjan je za celoten krog po Kamniških Grintovcih porabil 13 ur in 2 minuti, jaz pa za skoraj pol manj poti in tudi pol manj napora skoraj 11 ur. Na parkirišče pri Calcitu smo pritekli 2 minuti čez šesto zvečer.',
     ],
+    gallery: ['/images/verbier01.jpg', '/images/pordoi01.jpg', '/images/rgac02.jpg'],
+    blocks: [
+      {
+        type: 'paragraph',
+        text: 'Sebastjan je svoj podvig, ki ga je načrtoval že celo leto, začel ob zgodnji jutranji uri na parkirišču pri Calcitu.',
+      },
+      {
+        type: 'image',
+        src: '/images/verbier01.jpg',
+        alt: 'Vzpon proti Kamniškemu Sedlu',
+      },
+      {
+        type: 'paragraph',
+        text: 'Moja pot pa se je začela ob 7.00 z vzponom na Sedlo z Jermance.',
+      },
+      {
+        type: 'quote',
+        text: 'Sebastjan je za celoten krog porabil 13 ur in 2 minuti.',
+      },
+      {
+        type: 'gallery',
+        images: [
+          '/images/verbier01.jpg',
+          '/images/pordoi01.jpg',
+          '/images/rgac02.jpg',
+          '/images/verbier01.jpg',
+          '/images/pordoi01.jpg',
+          '/images/rgac02.jpg',
+        ],
+      },
+      {
+        type: 'paragraph',
+        text: 'Na parkirišče pri Calcitu smo pritekli 2 minuti čez šesto zvečer.',
+      },
+    ],
     stravaUrl: 'https://www.strava.com/activities/4050336133',
     gpxUrl: '/gpx/grintovci-extreme.gpx',
   },
 ]
 
-export const publicAdventures = adventures.filter(
-  (adventure) => adventure.public
-)
+export const publicAdventures = adventures.filter((adventure) => adventure.public)
 
 export const featuredAdventures = adventures.filter(
-  (adventure) => adventure.public && adventure.featured
+  (adventure) => adventure.public && adventure.featured,
 )
 
 export const adventureStats = {
-  totalDistance: publicAdventures.reduce(
-    (sum, adventure) => sum + adventure.distance,
-    0
-  ),
-  totalElevation: publicAdventures.reduce(
-    (sum, adventure) => sum + adventure.elevation,
-    0
-  ),
+  totalDistance: publicAdventures.reduce((sum, adventure) => sum + adventure.distance, 0),
+  totalElevation: publicAdventures.reduce((sum, adventure) => sum + adventure.elevation, 0),
 }
