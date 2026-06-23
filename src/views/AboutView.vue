@@ -6,9 +6,10 @@
       </div>
 
       <div class="about-hero__content">
-        <p class="eyebrow">O meni</p>
+        <p class="eyebrow">Info</p>
+        <h1>O meni</h1>
         <p>
-          Živjo, sem Nejc. Tukaj najdete nekaj informacij o meni, povezave na druge spletne strani in nekaj kontaktov.
+          Živjo, sem <span class="accent">Nejc</span>. Tukaj najdete nekaj informacij o meni, povezave na druge spletne strani in nekaj kontaktov.
         </p>
 
         <div class="about-hero__buttons" aria-label="Skoči na vsebino strani O meni">
@@ -96,10 +97,16 @@ import heroImage from '/images/monaco01.jpg'
 
 .about-hero__content h1 {
   margin: 0;
-  max-width: 780px;
+  max-width: 480px;
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   line-height: 0.92;
+}
+
+.accent {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 .about-hero__content p:not(.eyebrow) {
@@ -242,7 +249,7 @@ import heroImage from '/images/monaco01.jpg'
   }
 
   .about-hero__content p:not(.eyebrow),
-  .about-hero__content .eyebrow {
+  .about-hero__content {
     color: #fffaf0;
   }
 

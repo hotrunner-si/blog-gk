@@ -51,12 +51,20 @@ const router = useRouter()
 
 const activeView = computed({
   get: () => route.query.view || 'cards',
-  set: (view) => {
-    router.replace({
+  set: async (view) => {
+    if (view === route.query.view) return
+
+    const currentScrollY = window.scrollY
+
+    await router.replace({
       query: {
         ...route.query,
         view,
       },
+    })
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, currentScrollY)
     })
   },
 })

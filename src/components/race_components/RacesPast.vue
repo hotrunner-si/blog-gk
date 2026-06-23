@@ -65,8 +65,8 @@
 
                 <div class="completed-actions">
                   <a
-                    v-if="stravaLink(race)"
-                    :href="stravaLink(race)"
+                    v-if="race.stravaLink"
+                    :href="race.stravaLink"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="race-button"
@@ -74,10 +74,8 @@
                     Strava
                   </a>
                   <a
-                    v-if="blogLink(race)"
-                    :href="blogLink(race)"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    v-if="race.blogLink"
+                    :href="race.blogLink"
                     class="race-button"
                   >
                     Objava v blogu
@@ -100,18 +98,6 @@ const openRace = ref(null)
 
 function toggleRace(name) {
   openRace.value = openRace.value === name ? null : name
-}
-
-function stravaLink(race) {
-  if (race.stravaLink) return race.stravaLink
-  if (race.link?.includes('strava.com')) return race.link
-  return null
-}
-
-function blogLink(race) {
-  if (race.blogLink) return race.blogLink
-  if (race.link && !race.link.includes('strava.com')) return race.link
-  return null
 }
 </script>
 

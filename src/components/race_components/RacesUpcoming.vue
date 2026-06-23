@@ -6,8 +6,8 @@
         <h2 class="upcoming-title">Načrti</h2>
       </div>
       <div class="slider-controls">
-        <button @click="scrollLeft" class="slider-btn" aria-label="Prejšnje tekme">&lt;</button>
-        <button @click="scrollRight" class="slider-btn" aria-label="Naslednje tekme">&gt;</button>
+        <button @click="scrollLeft" class="slider-btn" aria-label="Prejšnje tekme">❮</button>
+        <button @click="scrollRight" class="slider-btn" aria-label="Naslednje tekme">❯</button>
       </div>
     </div>
 
@@ -47,10 +47,7 @@ div::-webkit-scrollbar {
 }
 
 .upcoming {
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background: var(--color-card-bg);
+  width: 100%;
 }
 
 .upcoming-header {
@@ -82,13 +79,37 @@ div::-webkit-scrollbar {
 }
 
 .slider-btn {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 999px;
   border: 1px solid var(--color-border);
-  background: var(--color-surface);
+
+  background: transparent;
   color: var(--color-text);
+
+  font-size: 1.5rem;
+  line-height: 1;
+
   cursor: pointer;
+
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .2s ease;
+}
+
+.slider-btn:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.slider-btn:active {
+  transform: scale(.94);
 }
 
 .slider {
@@ -158,10 +179,6 @@ div::-webkit-scrollbar {
 }
 
 @media (max-width: 640px) {
-  .upcoming {
-    padding: 1.25rem;
-  }
-
   .upcoming-header {
     align-items: flex-start;
   }

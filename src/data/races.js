@@ -78,7 +78,7 @@ export const completedRaces = [
     rank: '65.',
     image: '/images/ep2026/ep-open-01.jpg',
     imageAlt: 'Pastirske koče na Veliki planini',
-    link: 'https://gorski-blog.netlify.app/blog/evropsko-prvenstvo-kamnik',
+    blogLink: '/blog/evropsko-prvenstvo-kamnik',
     note: 'Vesel sem, da sem bil del tako dobro organiziranega dogodka. Tekma v domačem kraju je bila super. Spusti so bili blatni in tehnični. Hvala vsem gledalcem in prostovoljcem za neverjetno vzdušje. Končal sem na 65. mestu.',
   },
   {
@@ -90,7 +90,7 @@ export const completedRaces = [
     rank: '14.',
     image: '/images/krvavec01.jpeg',
     imageAlt: 'Ultra Trail Vipavska Dolina tekma',
-    link: 'https://www.strava.com/activities/18250497066',
+    stravaLink: 'https://www.strava.com/activities/18250497066',
     note: 'Ni bil moj dan, se vidimo naslednje leto.',
   },
   {
@@ -102,7 +102,7 @@ export const completedRaces = [
     rank: '2.',
     image: '/images/ep2026/ep-sg-01.jpg',
     imageAlt: 'Rezultati teka Starigrad Kamnik trail tek',
-    link: 'https://www.strava.com/activities/18155879391',
+    stravaLink: 'https://www.strava.com/activities/18155879391',
     note: 'Ista proga kot evropsko prvenstvo. Uspelo mi je kvalificirati se v up-down format teka.',
   },
   {
@@ -114,7 +114,7 @@ export const completedRaces = [
     rank: '',
     image: '/images/kv01.jpg',
     imageAlt: 'Farbanca trail tek 2026 trening vzponi',
-    link: 'https://www.strava.com/activities/17161020180',
+    stravaLink: 'https://www.strava.com/activities/17161020180',
     note: 'Tekma na čas, ne na razdaljo. Letos sem isto traso pretekel 9-krat, skupaj 24 km in 2700 m vzpona.',
   },
   {
@@ -126,7 +126,7 @@ export const completedRaces = [
     rank: '39.',
     image: '/images/golica01.jpg',
     imageAlt: 'Golica koča in greben Golice med Julian Alps Trail Run 2025',
-    link: 'https://www.strava.com/activities/15865784264',
+    stravaLink: 'https://www.strava.com/activities/15865784264',
     note: 'Prvič sem na Julian Alps tekel daljšo razdaljo.',
   },
   {
@@ -138,7 +138,7 @@ export const completedRaces = [
     rank: '84.',
     image: '/images/verbier25/verbier04.jpg',
     imageAlt: 'Proge Verbier 2025 UTMB World Series ultra trail tek',
-    link: 'https://gorski-blog.netlify.app/blog/trail-verbier',
+    blogLink: '/blog/trail-verbier',
     note: 'Moja prva ultra trail razdalja. Na UTMB seriji sem želel priti v cilj pred nočjo, kar mi je uspelo z 87. mestom.',
   },
 ]
