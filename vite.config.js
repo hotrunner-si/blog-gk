@@ -14,7 +14,7 @@ export default defineConfig({
      markdown({
       mode: [Mode.HTML, Mode.META],
     }),
-    svgLoader
+    svgLoader(),
   ],
   resolve: {
     alias: {
