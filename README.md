@@ -1,11 +1,13 @@
 # blog Gorski Kilometri
 
-dizajn in koda za spletni blog
+to je moja osebna spletna stran, osredotočena na tekaško stran mojega življenja.
 
 ## kaj je narejeno
 
-Home Page, Blog Page
+Home page, Blog page, Blog-Post page, About page in Races page
 
 ## kaj je planirano za naprej
 
-posamezni blog vnosi, cms, ...
+več blog vnosi
+cms, ki bo omogočal lažje vnose v blog
+cms, za vnose tekem in podvigov

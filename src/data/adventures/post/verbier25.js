@@ -2,7 +2,7 @@ import { createAdventure, p, img, quote, gallery } from '../helpers'
 
 export default createAdventure({
   id: 2,
-  slug: 'treil-verbier',
+  slug: 'trail-verbier',
   public: true,
   title: 'Trail Verbier - potovanje v Švico',
   location: 'Valais',

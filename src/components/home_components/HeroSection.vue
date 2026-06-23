@@ -18,7 +18,7 @@
     </div>
 
     <div class="hero-image-wrap">
-      <img src="../assets/giau01.jpg" alt="Gorska pokrajina" class="hero-image" />
+      <img src="@/assets/giau01.jpg" alt="Gorska pokrajina" class="hero-image" />
       <div class="hero-card-2" aria-label="Povzetek strani">
         <span>{{ adventureCount }}</span>
         <p>zapisa</p>
@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { publicAdventures } from '../data/adventures'
+import { publicAdventures } from '@/data/adventures'
 
 const adventureCount = publicAdventures.length
 </script>

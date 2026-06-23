@@ -17,7 +17,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import AdventureCard from './AdventureCard.vue'
+import AdventureCard from '../blog_components/AdventureCard.vue'
 import { featuredAdventures } from '@/data/adventures'
 
 </script>

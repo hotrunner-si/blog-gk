@@ -38,10 +38,10 @@
 
 <script setup>
 import { publicAdventures, adventureStats } from '../data/adventures'
-import ViewSwitcher from '../components/ViewSwitcher.vue'
-import AdventureCard from '../components/AdventureCard.vue'
-import BlogList from '../components/BlogList.vue'
-import BlogCalendar from '../components/BlogCalendar.vue'
+import ViewSwitcher from '../components/blog_components/ViewSwitcher.vue'
+import AdventureCard from '../components/blog_components/AdventureCard.vue'
+import BlogList from '../components/blog_components/BlogList.vue'
+import BlogCalendar from '../components/blog_components/BlogCalendar.vue'
 
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'

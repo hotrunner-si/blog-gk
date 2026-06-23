@@ -115,8 +115,8 @@
 <script setup>
 import { computed } from 'vue'
 import { adventures } from '../data/adventures'
-import PlaygroundIcons from '../components/PlaygroundIcons.vue'
-import AdventureMap from '../components/AdventureMap.vue'
+import PlaygroundIcons from '../components/blog_components/PlaygroundIcons.vue'
+import AdventureMap from '../components/blog_components/AdventureMap.vue'
 
 const props = defineProps({
   slug: { type: String, required: true },
