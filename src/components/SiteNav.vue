@@ -7,7 +7,7 @@
         <nav aria-label="Glavna navigacija">
           <RouterLink to="/">Domov</RouterLink>
           <RouterLink to="/blog">Blog</RouterLink>
-          <RouterLink to="/info">O meni</RouterLink>
+          <RouterLink to="/info">Info</RouterLink>
           <RouterLink to="/podvigi">Tekme in podvigi</RouterLink>
         </nav>
 

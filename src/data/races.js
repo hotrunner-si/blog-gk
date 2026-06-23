@@ -127,7 +127,7 @@ export const completedRaces = [
     image: '/images/golica01.jpg',
     imageAlt: 'Golica koča in greben Golice med Julian Alps Trail Run 2025',
     link: 'https://www.strava.com/activities/15865784264',
-    note: 'Prvič sem tekel daljšo razdaljo na Julian Alps Trail Run.',
+    note: 'Prvič sem na Julian Alps tekel daljšo razdaljo.',
   },
   {
     name: 'Trail Verbier - St. Bernard',

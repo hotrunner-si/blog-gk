@@ -1,8 +1,8 @@
 <template>
   <section class="completed">
     <div class="completed-header">
-      <p class="completed-tag">Zaključene dirke</p>
-      <h2 class="completed-title">Rezultati preteklih tekem</h2>
+      <p class="completed-tag">Rezultati</p>
+      <h2 class="completed-title">Zaključene dirke</h2>
     </div>
 
     <div class="completed-list">
@@ -345,9 +345,6 @@ function blogLink(race) {
   transform: rotate(180deg);
 }
 
-.completed-card--open .completed-more {
-  transform: translateY(0.35rem);
-}
 
 .race-button {
   display: inline-flex;
@@ -360,7 +357,6 @@ function blogLink(race) {
 
 .completed-summary:hover .completed-more,
 .race-button:hover {
-  border-color: var(--color-accent);
   color: var(--color-accent);
 }
 

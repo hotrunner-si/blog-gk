@@ -96,7 +96,6 @@ const isOpen = ref(false)
 }
 
 .more-toggle:hover {
-  border-color: var(--color-accent);
   color: var(--color-accent);
 }
 
