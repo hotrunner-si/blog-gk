@@ -24,7 +24,7 @@ export default createAdventure({
     ]),
 
     p(
-      'Festivalno prizorišče na sotočju Soče in Tolminke je privabilo veliko število tekmovalcev, ki so se razvrstili po tekmah čez cel vikend.',
+      'Festivalno prizorišče na sotočju Soče in Tolminke je privabilo veliko število tekačev, ki so se razvrstili po tekmah čez cel vikend.',
     ),
 
     p(
@@ -63,7 +63,6 @@ export default createAdventure({
         text: [
           'Tudi letos smo bili deležni majice v novi barvi in finisher medalje.',
           'Na zmagovalnem odru pa so organizatorji znova poskrbeli za unikaten lesen pokal in novo termovko v barvah festivala.',
-          'Slika prikazuje še nagrade iz preteklih let.',
         ],
         caption:
           'Nagrade iz več nastopov na Soča Outdoor Festivalu. ',
