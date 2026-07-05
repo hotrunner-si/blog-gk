@@ -18,7 +18,7 @@
       openLightbox({
         src: adventure.image,
         alt: adventure.title,
-        caption: [{ type: 'text', value: adventure.excerpt }]
+        caption: [{ type: 'text', value: adventure.title }]
       })
       " />
 
