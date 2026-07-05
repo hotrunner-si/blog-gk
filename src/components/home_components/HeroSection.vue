@@ -12,7 +12,7 @@
 
         <div class="hero-card" aria-label="Povzetek strani">
           <span>{{ adventureCount }}</span>
-          <p>zapisa</p>
+          <p>zapisi</p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <img src="@/assets/giau01.jpg" alt="Gorska pokrajina" class="hero-image" />
       <div class="hero-card-2" aria-label="Povzetek strani">
         <span>{{ adventureCount }}</span>
-        <p>zapisa</p>
+        <p>zapisi</p>
       </div>
     </div>
   </section>

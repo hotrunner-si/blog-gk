@@ -1,6 +1,6 @@
 export const statsLinks = {
   utmb: {
-    index: '752',
+    index: '750',
     link: 'https://utmb.world/en/runner/2586047.nejc.ursic',
   },
   strava: {
@@ -40,35 +40,47 @@ export const achievements = [
 
 export const upcomingRaces = [
   {
-    name: 'Soča Outdoor Festival',
-    date: '26. junij 2026',
-    distance: '25 km + vertikal',
-    elevation: '1000 m+',
-    image: '/images/soca01.jpg',
-    imageAlt: 'Soča Outdoor Festival trail tekaški dogodek',
-    link: 'https://soca-outdoor.com/',
-  },
-  {
     name: 'K24 Trail',
     date: '8. avgust 2026',
     distance: '24 km',
     elevation: '950 m+',
-    image: '/images/giau01.jpg',
+    image: '/images/k24-01.png',
     imageAlt: 'K24 trail tek v gorah',
     link: 'https://k24trail.si/',
   },
   {
-    name: 'Julian Alps Trail Run',
-    date: '19. september 2026',
-    distance: '25 km',
-    elevation: '1200 m+',
-    image: '/images/falzarego01.jpg',
-    imageAlt: 'Julian Alps Trail Run gorski trail tek',
-    link: 'https://julianalps.utmb.world',
+    name: 'Chianti Ultra Trail',
+    date: '21. marec 2027',
+    distance: '20 km',
+    elevation: '920 m+',
+    image: '/images/chianti01.png',
+    imageAlt: 'Chianti Ultra Trail by UTMB',
+    link: 'https://chianti.utmb.world',
+  },
+  {
+    name: 'Tenerife Bluetrail',
+    date: '26. junij 2026',
+    distance: '82 km',
+    elevation: '3300 m+',
+    image: '/images/tenerife01.png',
+    imageAlt: 'Tenerife Bluetrail by UTMB',
+    link: 'https://tenerife.utmb.world',
   },
 ]
 
 export const completedRaces = [
+  {
+    name: 'Soča Outdoor Festival',
+    year: '26. junij 2026',
+    distance: '25 km + vertikal',
+    elevation: '1000 m+',
+    time: '2:30:40',
+    rank: '4.',
+    image: '/images/soca01.jpg',
+    imageAlt: 'Soča Outdoor Festival trail tekaški dogodek',
+    blogLink: '/blog/soca-outdoor-festival-2026',
+    note: 'Že tretjič sem se udeležil dveh tekov na Soča Outdoor Festivalu, vertikal in 25 km. Tudi tokrat sem v skupnem saštevku osvojil 1. mesto.',
+  },
   {
     name: 'Evropsko prvenstvo v offroad teku',
     year: '7. junij 2026',
@@ -139,6 +151,6 @@ export const completedRaces = [
     image: '/images/verbier25/verbier04.jpg',
     imageAlt: 'Proge Verbier 2025 UTMB World Series ultra trail tek',
     blogLink: '/blog/trail-verbier',
-    note: 'Moja prva ultra trail razdalja. Na UTMB seriji sem želel priti v cilj pred nočjo, kar mi je uspelo z 87. mestom.',
+    note: 'Moja prva ultra trail razdalja. Na UTMB seriji sem želel priti v cilj pred nočjo, kar mi je uspelo s 84. mestom.',
   },
 ]

@@ -13,22 +13,22 @@
         </p>
 
         <div class="about-hero__buttons" aria-label="Skoči na vsebino strani O meni">
-          <a class="button button--ghost" href="#ukvarjam">Moje delo</a>
-          <a class="button button--ghost" href="#kontakti">Kontakti in povezave</a>
+          <a class="button button--ghost" href="#work">Moje delo</a>
+          <a class="button button--ghost" href="#contacts">Kontakti in povezave</a>
         </div>
       </div>
     </header>
 
     <div class="about-sections">
-      <article id="kdo-sem" class="about-card about-card--wide">
+      <article id="who" class="about-card about-card--wide">
         <p class="eyebrow">Kdo sem</p>
         <p>Prihajam iz Županjih Njiv. Star sem 24 let in že od 8 leta treniram gorski tek v Klubu gorskih tekačev Papež. Dolgo časa sem imel trenerje, sedaj pa treniram sam.</p>
         <p>Največkrat tekmujem na kratkih gorkotekaških in trail tekmah, ki trajajo nekje med 20 minut in 3 urami. Te tekme mi tudi najbolj ležijo in sem nanje najbolje pripravljen.</p>
         <p>Zadnje čase pa me vse bolj navdušujejo daljše trail razdalje. Zaenkrat sem se preizkusil že na 76 kilometrih v Švici in kasneje še na 54 kilometrih v Kranjski Gori. </p>
-        <p>V Prihodnosti si želim nabrati še več izkušenj iz daljših tekem in morda osvojiti tudi kakšno medaljo.</p>
+        <p>V prihodnosti si želim nabrati še več izkušenj iz daljših tekem in morda osvojiti tudi kakšno medaljo.</p>
       </article>
 
-      <article id="ukvarjam" class="about-card">
+      <article id="work" class="about-card">
         <p class="eyebrow">S čim se še ukvarjam</p>
         <p>Poleg teka me veselijo tudi druge oblike gibanja, predvsem kolesarjenje in pohodništvo.</p>
         <p> Ko pa ne športam, pa sem zaposlen s študijem in s programiranjem spletnih strani.</p>
@@ -43,7 +43,7 @@
           </a>
       </article>
 
-      <article id="kontakti" class="about-card">
+      <article id="contacts" class="about-card">
         <p class="eyebrow">Kontakti in povezave</p>
         <h2>Ostani v stiku</h2>
         <p>

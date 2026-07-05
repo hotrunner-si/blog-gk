@@ -4,16 +4,20 @@
   --color-bg: #f7f2e8;
   --color-surface: #fffaf0;
   --color-surface-soft: #efe4d2;
+
   --color-text: #1f241f;
   --color-muted: #6f675d;
   --color-border: rgba(31, 36, 31, 0.14);
+
   --color-accent: #b86424;
   --color-accent-hover: #d17e3f;
   --color-accent-soft: rgba(184, 100, 36, 0.14);
   --color-green: #526f55;
+  
   --color-nav-bg: rgba(247, 242, 232, 0.78);
   --color-button-text: #fffaf0;
   --color-hero-glow: rgba(111, 143, 114, 0.22);
+
   --color-card-bg: rgba(255, 250, 240, 0.78);
   --color-card-bg-strong: rgba(255, 250, 240, 0.92);
 
@@ -41,16 +45,20 @@
   --color-bg: #101411;
   --color-surface: #171d19;
   --color-surface-soft: #202820;
+
   --color-text: #f3f0e8;
   --color-muted: #b8b1a4;
   --color-border: rgba(243, 240, 232, 0.14);
+
   --color-accent: #d98236;
   --color-accent-hover: #be621b;
   --color-accent-soft: rgba(217, 130, 54, 0.16);
   --color-green: #6f8f72;
+
   --color-nav-bg: rgba(16, 20, 17, 0.78);
   --color-button-text: #15110c;
   --color-hero-glow: rgba(111, 143, 114, 0.22);
+
   --color-card-bg: rgba(23, 29, 25, 0.78);
   --color-card-bg-strong: rgba(23, 29, 25, 0.92);
 

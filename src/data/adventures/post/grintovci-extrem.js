@@ -3,7 +3,6 @@ import { createAdventure, p, img, quote, gallery } from '../helpers'
 export default createAdventure({
   id: 1,
   slug: 'grintovci-extrem',
-  public: false,
   title: 'FKT Grintovci Extrem',
   location: 'Kamniško-Savinjske Alpe',
   date: '2020-09-12',

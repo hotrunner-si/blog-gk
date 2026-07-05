@@ -14,57 +14,55 @@
       </div>
     </header>
 
-    <img :src="adventure.image" :alt="adventure.title" class="hero-image" />
+    <img :src="adventure.image" :alt="adventure.title" class="hero-image clickable-image" @click="
+      openLightbox({
+        src: adventure.image,
+        alt: adventure.title,
+        caption: [{ type: 'text', value: adventure.excerpt }]
+      })
+      " />
 
     <section class="post-content">
       <template v-if="adventure.blocks?.length">
         <template v-for="(block, index) in adventure.blocks" :key="index">
           <p v-if="block.type === 'paragraph'" class="text-block">
-            {{ block.text }}
+            <RichText :content="block.content" />
           </p>
 
           <h2 v-else-if="block.type === 'heading'" class="content-heading">
             {{ block.text }}
           </h2>
 
-          <figure
-            v-else-if="block.type === 'image'"
-            class="image-block"
-            :class="`image-block--${block.layout || 'normal'}`"
-          >
-            <template
-              v-if="
-                block.layout === 'caption-right' ||
-                block.layout === 'caption-left'
-              "
-            >
-              <img :src="block.src" :alt="block.alt || adventure.title" />
+          <figure v-else-if="block.type === 'image'" class="image-block"
+            :class="`image-block--${block.layout || 'normal'}`">
+            <img :src="block.src" :alt="block.alt || adventure.title" class="clickable-image" @click="
+              openLightbox({
+                src: block.src,
+                alt: block.alt || adventure.title,
+                caption: block.caption || []
+              })
+              " />
 
-              <figcaption v-if="block.caption">
-                {{ block.caption }}
-              </figcaption>
-            </template>
-
-            <template v-else>
-              <img :src="block.src" :alt="block.alt || adventure.title" />
-
-              <figcaption v-if="block.caption">
-                {{ block.caption }}
-              </figcaption>
-            </template>
+            <div v-if="block.sideText?.length" class="image-side-text">
+              <p v-for="(paragraph, paragraphIndex) in block.sideText" :key="paragraphIndex">
+                <RichText :content="paragraph" />
+              </p>
+            </div>
           </figure>
 
           <blockquote v-else-if="block.type === 'quote'" class="quote-block">
-            {{ block.text }}
+            <RichText :content="block.content" />
           </blockquote>
 
           <div v-else-if="block.type === 'gallery'" class="gallery">
-            <img
-              v-for="image in block.images"
-              :key="image"
-              :src="image"
-              :alt="adventure.title"
-            />
+            <img v-for="image in block.images" :key="image.src" :src="image.src" :alt="image.alt || adventure.title"
+              class="clickable-image" @click="
+                openLightbox({
+                  src: image.src,
+                  alt: image.alt || adventure.title,
+                  caption: image.caption || []
+                })
+                " />
           </div>
 
           <div v-else-if="block.type === 'stats'" class="stats-block">
@@ -77,11 +75,7 @@
       </template>
 
       <template v-else>
-        <p
-          v-for="paragraph in adventure.content"
-          :key="paragraph"
-          class="text-block"
-        >
+        <p v-for="paragraph in adventure.content" :key="paragraph" class="text-block">
           {{ paragraph }}
         </p>
       </template>
@@ -97,10 +91,7 @@
     <section v-if="adventure.gpxUrl" class="external-card map-card">
       <h2>Trasa</h2>
 
-      <AdventureMap
-        :gpx-url="adventure.gpxUrl"
-        :markers="adventure.mapMarkers || []"
-      />
+      <AdventureMap :gpx-url="adventure.gpxUrl" :markers="adventure.mapMarkers || []" />
 
       <a :href="adventure.gpxUrl" download>Prenesi GPX</a>
     </section>
@@ -110,13 +101,17 @@
     <h1>Objava ne obstaja</h1>
     <RouterLink to="/blog">Nazaj na blog</RouterLink>
   </section>
+
+  <ImageLightbox :image="selectedImage" @close="closeLightbox" />
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { adventures } from '../data/adventures'
 import PlaygroundIcons from '../components/blog_components/PlaygroundIcons.vue'
 import AdventureMap from '../components/blog_components/AdventureMap.vue'
+import RichText from '../components/blog_components/RichText.vue'
+import ImageLightbox from '../components/blog_components/ImageLightbox.vue'
 
 const props = defineProps({
   slug: { type: String, required: true },
@@ -135,9 +130,23 @@ const formattedDate = computed(() => {
     year: 'numeric',
   }).format(new Date(adventure.value.date))
 })
+
+const selectedImage = ref(null)
+
+const openLightbox = (image) => {
+  selectedImage.value = image
+}
+
+const closeLightbox = () => {
+  selectedImage.value = null
+}
 </script>
 
 <style scoped>
+.clickable-image {
+  cursor: zoom-in;
+}
+
 .blog-post {
   padding: var(--space-2xl) 0;
 }
@@ -215,8 +224,8 @@ const formattedDate = computed(() => {
 
 .image-block figcaption {
   margin-top: var(--space-sm);
-  color: var(--color-muted);
-  font-size: 0.95rem;
+  color: var(--color-text);
+  font-size: 1.1rem;
   text-align: center;
 }
 
@@ -239,8 +248,8 @@ const formattedDate = computed(() => {
   border-radius: 0;
 }
 
-.image-block--caption-right,
-.image-block--caption-left {
+.image-block--text-right,
+.image-block--text-left {
   display: grid;
   gap: 3rem;
   align-items: center;
@@ -248,45 +257,53 @@ const formattedDate = computed(() => {
   max-width: 1000px;
 }
 
-.image-block--caption-right {
+.image-block--text-right {
   grid-template-columns: 2fr 1fr;
 }
 
-.image-block--caption-left {
+.image-block--text-left {
   grid-template-columns: 1fr 2fr;
 }
 
-.image-block--caption-left img {
+.image-block--text-left img {
   order: 2;
 }
 
-.image-block--caption-left figcaption {
+.image-block--text-left .image-side-text {
   order: 1;
 }
 
-.image-block--caption-right figcaption,
-.image-block--caption-left figcaption {
-  margin: 0;
-  font-size: 1rem;
+.image-side-text {
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--color-muted);
-  text-align: left;
+  color: var(--color-text);
+}
+
+.image-side-text p {
+  margin: 0 0 var(--space-md);
+}
+
+.image-side-text p:last-child {
+  margin-bottom: 0;
+}
+
+.clickable-image {
+  cursor: zoom-in;
 }
 
 @media (max-width: 700px) {
-  .image-block--caption-right,
-  .image-block--caption-left {
+  .image-block--text-right,
+  .image-block--text-left {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
-  .image-block--caption-left img,
-  .image-block--caption-left figcaption {
+  .image-block--text-left img,
+  .image-block--text-left .image-side-text {
     order: initial;
   }
 
-  .image-block--caption-right figcaption,
-  .image-block--caption-left figcaption {
+  .image-side-text {
     text-align: center;
   }
 }
@@ -339,6 +356,7 @@ const formattedDate = computed(() => {
 }
 
 @media (max-width: 770px) {
+
   .gallery,
   .stats-block {
     grid-template-columns: 1fr 1fr;
@@ -350,6 +368,7 @@ const formattedDate = computed(() => {
 }
 
 @media (max-width: 600px) {
+
   .gallery,
   .stats-block {
     grid-template-columns: 1fr;
@@ -390,5 +409,4 @@ const formattedDate = computed(() => {
   display: inline-block;
   margin-top: var(--space-md);
 }
-
 </style>
