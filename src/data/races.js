@@ -1,10 +1,10 @@
 export const statsLinks = {
   utmb: {
-    index: '750',
+    index: '754',
     link: 'https://utmb.world/en/runner/2586047.nejc.ursic',
   },
   strava: {
-    koms: '51',
+    koms: '53',
     link: 'https://www.strava.com/athletes/65016800',
   },
 }
