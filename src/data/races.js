@@ -1,6 +1,6 @@
 export const statsLinks = {
   utmb: {
-    index: '754',
+    index: '758',
     link: 'https://utmb.world/en/runner/2586047.nejc.ursic',
   },
   strava: {
